@@ -3,7 +3,7 @@ import { Rocket, Github, Instagram, Linkedin, MoveRight } from "lucide-react";
 
 export default function Header() {
   return (
-    <div className="fixed w-full z-50 border-b-2 bg-white bg-opacity-20 backdrop-blur-lg">
+    <div className="fixed w-full z-50 border-b-4 border-black bg-white bg-opacity-20 backdrop-blur-lg">
       <nav className="flex justify-between max-w-7xl m-auto items-center py-4">
         <a href="/" className="group md:flex hidden">
           <Rocket className="group-hover:animate-rocket-launch group-hover:fill-emerald-500 group-hover:stroke-emerald-500" />
