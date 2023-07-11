@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        neobrutalism: "5px 5px #000",
+      },
       keyframes: {
         wave: {
           "0%": { transform: "rotate(0.0deg)" },
