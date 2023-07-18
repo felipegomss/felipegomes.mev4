@@ -23,9 +23,9 @@ export default function ProjectCard({ url, img, type, name }: Project) {
           />
         </div>
       </a>
-      <div className="flex justify-between mt-2">
+      <div className="grid grid-cols-2 mt-2">
         <h2 className="text-2xl font-bold ">{name}</h2>
-        <div className="flex items-center">
+        <div className="flex items-center place-content-end">
           <span className="rounded-xl bg-zinc-300 text-zinc-950 p-1 px-2 text-xs">
             {type}
           </span>
