@@ -68,12 +68,7 @@ export default function About() {
           </a>
         </article>
 
-        <Image
-          src="https://instagram.fssa2-1.fna.fbcdn.net/v/t51.2885-15/319136153_178711961475536_7639894736774846049_n.webp?stp=dst-jpg_e35&_nc_ht=instagram.fssa2-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=RIqf6KYlYdIAX8pQ5Ux&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjk5MDM0NzcwMzUyODgwNTA3OA%3D%3D.2-ccb7-5&oh=00_AfCWM98W12MmkC-ZgCs_5H-Ges11cSfUN5Q_AqtjfrMqJg&oe=64B24BF8&_nc_sid=fc8dfb"
-          alt=""
-          width={500}
-          height={500}
-        />
+        <Image src="/felipephoto.webp" alt="" width={500} height={500} />
       </main>
     </div>
   );
