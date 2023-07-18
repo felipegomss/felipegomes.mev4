@@ -35,7 +35,7 @@ export default function Articles() {
   }, []);
 
   return (
-    <div className="max-w-7xl m-auto p-8">
+    <div className="max-w-7xl m-auto p-8 md:px-0">
       <h1 className="text-5xl font-extrabold my-8">Dev Insights</h1>
       <div className="grid gap-8">
         {articles.map((article, index) => {
@@ -87,30 +87,29 @@ export default function Articles() {
 
           const formattedDate = formatDate(article.pubDate);
           return (
-            <a
-              href={article.link}
-              className="border-b py-2"
-              key={index}
-              target="_blank"
-            >
+            <div className="border-b py-2" key={index}>
               <p className="text-zinc-600 text-sm my-2">{formattedDate}</p>
-              <h1 className="text-xl font-black">{article.title}</h1>
-              <p dangerouslySetInnerHTML={createMarkup()} />
-              <div className="my-4 flex gap-2">
+              <a href={article.link} target="_blank">
+                <h1 className="text-xl font-black">{article.title}</h1>
+                <p dangerouslySetInnerHTML={createMarkup()} />
+              </a>
+              <div className="my-4 flex flex-wrap gap-2">
                 {article.categories.length > 0
                   ? article.categories.map((category, index) => {
                       return (
-                        <span
-                          className="rounded bg-zinc-300 text-zinc-400 p-1 text-xs"
+                        <a
+                          className="rounded-xl bg-zinc-300 text-zinc-950 p-1 px-2 text-xs"
+                          href={`https://medium.com/tag/${category}`}
                           key={index}
+                          target="_blank"
                         >
                           {category}
-                        </span>
+                        </a>
                       );
                     })
                   : ""}
               </div>
-            </a>
+            </div>
           );
         })}
       </div>

@@ -16,7 +16,7 @@ export default function About() {
     <div className="p-8 relative bg-black text-white min-h-screen flex items-center justify-center">
       <main className=" z-40 max-w-7xl m-auto flex flex-col-reverse md:flex-row gap-16">
         <article className="flex flex-col gap-8 justify-center">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-purple-400 from-emerald-500">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-200 via-emerald-200 to-yellow-200">
             Felipe Gomes
           </h1>
           <p className="text-zinc-400">
