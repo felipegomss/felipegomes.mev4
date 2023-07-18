@@ -14,10 +14,10 @@ export default function ProjectCard({ url, img, type, name }: Project) {
   return (
     <div>
       <a href={url} target="_blank">
-        <div className="aspect-video rounded-xl border-2 cursor-pointer bg-zinc-950">
+        <div className="hover:scale-105 duration-500 aspect-video rounded-xl border-2 cursor-pointer bg-zinc-950">
           <Image
             src={`/${img}.png`}
-            alt="jacoseg webpge"
+            alt={`/${name} webpage`}
             width={500}
             height={500}
           />
