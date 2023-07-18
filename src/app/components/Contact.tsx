@@ -18,21 +18,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div className="flex justify-center items-center flex-col max-w-4xl px-4 py-20 m-auto">
       <Mailbox size={150} />
-      <h1 className="font-extrabold md:text-5xl text-3xl">Me mande um email</h1>
+      <h1 className="font-extrabold md:text-5xl text-3xl mt-8">
+        Me mande um email
+      </h1>
       <div
         onClick={handleEmailCopy}
-        className={`${
-          emailCopied ? "bg-emerald-500" : ""
-        } group relative flex gap-4 justify-center items-center py-4 px-8 border-8 border-black my-10 rounded-2xl shadow-neobrutalism cursor-pointer`}
+        className={`group relative flex gap-4 justify-center items-center py-4 px-8 border-8 border-black my-10 rounded-2xl shadow-neobrutalism cursor-pointer w-full`}
       >
-        <h2
-          className={`${
-            emailCopied ? "text-white" : ""
-          } md:text-3xl text-xl font-extrabold`}
-          ref={emailRef}
-        >
+        <h2 className={`md:text-3xl text-xl font-extrabold`} ref={emailRef}>
           {emailCopied ? "Email copiado 🫱🏽‍🫲🏽" : "contato@felipegomes.me"}
         </h2>
       </div>

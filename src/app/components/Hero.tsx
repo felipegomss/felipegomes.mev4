@@ -3,8 +3,8 @@ import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen flex justify-center items-center bg-white">
-      <div className="w-min uppercase">
+    <div className="relative w-full h-screen flex justify-center items-center bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-200 via-emerald-200 to-yellow-200">
+      <div className="w-min uppercase z-10">
         <h2 className="flex font-black text-zinc-700 md:text-xl">
           Oi <span className="animate-waving-hand">👋🏽</span>
           eu sou o felipe
