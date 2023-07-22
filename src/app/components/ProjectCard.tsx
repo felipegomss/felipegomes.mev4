@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Tag from "./Tag";
 
 interface Project {
   name: string;
@@ -12,7 +13,7 @@ type ProjectType = "Cliente Real" | "Estudo de Caso" | "Projeto Real";
 
 export default function ProjectCard({ url, img, type, name }: Project) {
   return (
-    <div>
+    <li>
       <a href={url} target="_blank">
         <div className="hover:scale-105 duration-500 aspect-video rounded-xl border-2 cursor-pointer bg-zinc-950">
           <Image
@@ -25,12 +26,8 @@ export default function ProjectCard({ url, img, type, name }: Project) {
       </a>
       <div className="grid grid-cols-2 mt-2">
         <h2 className="text-2xl font-bold ">{name}</h2>
-        <div className="flex items-center place-content-end">
-          <span className="rounded-xl bg-zinc-300 text-zinc-950 p-1 px-2 text-xs">
-            {type}
-          </span>
-        </div>
+        <Tag>{type}</Tag>
       </div>
-    </div>
+    </li>
   );
 }

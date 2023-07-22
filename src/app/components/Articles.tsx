@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Tag from "./Tag";
 
 interface ListArticles {
   title: string;
@@ -37,7 +38,7 @@ export default function Articles() {
   return (
     <div className="max-w-7xl m-auto p-8 md:px-0">
       <h1 className="text-5xl font-extrabold my-8">Dev Insights</h1>
-      <div className="grid gap-8">
+      <ul className="grid gap-8">
         {articles.map((article, index) => {
           const extractFirstParagraph = (content: string) => {
             const contentWithoutImages = content.replace(
@@ -87,7 +88,7 @@ export default function Articles() {
 
           const formattedDate = formatDate(article.pubDate);
           return (
-            <div className="border-b py-2" key={index}>
+            <li className="border-b py-2" key={index}>
               <p className="text-zinc-600 text-sm my-2">{formattedDate}</p>
               <a href={article.link} target="_blank">
                 <h1 className="text-xl font-black">{article.title}</h1>
@@ -98,21 +99,20 @@ export default function Articles() {
                   ? article.categories.map((category, index) => {
                       return (
                         <a
-                          className="rounded-xl bg-zinc-300 text-zinc-950 p-1 px-2 text-xs"
                           href={`https://medium.com/tag/${category}`}
                           key={index}
                           target="_blank"
                         >
-                          {category}
+                          <Tag>{category}</Tag>
                         </a>
                       );
                     })
                   : ""}
               </div>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

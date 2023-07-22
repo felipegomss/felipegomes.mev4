@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <div className="max-w-7xl m-auto p-8 md:px-0">
       <h1 className="text-5xl font-extrabold my-8">Code Lab</h1>
-      <div className="grid md:grid-cols-3 gap-8">
+      <ul className="grid md:grid-cols-3 gap-8">
         <ProjectCard
           name="Jacoseg"
           type="Cliente Real"
@@ -43,7 +43,7 @@ export default function Projects() {
           img="witw"
           url="http://countries.felipegomes.me/"
         />
-      </div>
+      </ul>
     </div>
   );
 }
