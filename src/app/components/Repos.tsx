@@ -3,6 +3,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Tag from "./Tag";
+import { Loader } from "lucide-react";
 
 interface Repository {
   id: number;
@@ -14,10 +15,13 @@ interface Repository {
 export default function Repos() {
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [page, setPage] = useState<number>(1);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const loadMoreRepositories = async () => {
       try {
+        setLoading(true);
+
         const response = await axios.get<Repository[]>(
           `https://api.github.com/users/felipegomss/repos?page=${page}&per_page=12&sort=updated`
         );
@@ -26,8 +30,11 @@ export default function Repos() {
           ...prevRepositories,
           ...newRepositories,
         ]);
+
+        setLoading(false);
       } catch (error) {
         console.error("Erro ao carregar os repositórios:", error);
+        setLoading(false);
       }
     };
 
@@ -56,9 +63,19 @@ export default function Repos() {
           </li>
         ))}
       </ul>
-      <div className="w-full">
-        <button onClick={handleLoadMore} className="m-auto ">
-          Carregar Mais
+      <div className="m-auto my-10 md:w-1/3">
+        <button
+          className="group relative flex gap-4 justify-center items-center py-4 px-8 border-8 border-black my-10 rounded-2xl shadow-neobrutalism cursor-pointer w-full"
+          onClick={handleLoadMore}
+          disabled={loading}
+        >
+          {loading ? (
+            <Loader size={32} className="animate-spin ease-out" />
+          ) : (
+            <h2 className="md:text-2xl text-xl font-extrabold">
+              Carregar Mais
+            </h2>
+          )}
         </button>
       </div>
     </div>

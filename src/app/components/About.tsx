@@ -70,7 +70,6 @@ export default function About() {
             </h2>
           </a>
         </article>
-
         <Image src="/felipephoto.webp" alt="" width={500} height={500} />
       </main>
     </div>
