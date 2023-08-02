@@ -9,37 +9,37 @@ export default function Projects() {
       <ul className="grid md:grid-cols-3 gap-8">
         <ProjectCard
           name="Jacoseg"
-          type="Cliente Real"
+          type="Real Client"
           img="jacoseg"
           url="https://www.jacoseg.com.br/"
         />
         <ProjectCard
           name="HooBank"
-          type="Estudo de Caso"
+          type="Study Case"
           img="hoobank"
           url="https://hoobank-rho-plum.vercel.app/"
         />
         <ProjectCard
           name="StreamJuice"
-          type="Projeto Real"
+          type="Real Project"
           img="streamjuice"
           url="https://streamjuice.felipegomes.me/#/"
         />
         <ProjectCard
           name="GPT3 Orcin"
-          type="Estudo de Caso"
+          type="Study Case"
           img="gpt3"
           url="https://gpt3-orcin.vercel.app/"
         />
         <ProjectCard
           name="Spotify Clone"
-          type="Estudo de Caso"
+          type="Study Case"
           img="spotify"
           url="https://spotify-clone-seven-orpin.vercel.app/"
         />
         <ProjectCard
           name="Where in the World?"
-          type="Projeto Real"
+          type="Real Project"
           img="witw"
           url="http://countries.felipegomes.me/"
         />

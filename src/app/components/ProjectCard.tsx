@@ -9,7 +9,7 @@ interface Project {
   type: ProjectType;
 }
 
-type ProjectType = "Cliente Real" | "Estudo de Caso" | "Projeto Real";
+type ProjectType = "Real Client" | "Study Case" | "Real Project";
 
 export default function ProjectCard({ url, img, type, name }: Project) {
   return (

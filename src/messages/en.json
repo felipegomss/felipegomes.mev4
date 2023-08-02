@@ -1,0 +1,16 @@
+{
+  "Header": {
+    "title": "About & Projects"
+  },
+  "Hero": {
+    "title": "I'm",
+    "paragraph": "Creator of Vibrant Digital Experiences. 90+ million users impacted by projects that transcend boundaries. Ready to overcome challenges and create innovative solutions?"
+  },
+  "About": {
+    "paragraph": "Hello! I am a passionate person, with a deep love for music, technology, games and soccer. As a front-end developer, I have improved my skills over 4 years, specializing in creating responsive and interactive user interfaces. I excel in challenging projects that require problem solving and creating innovative solutions. \n During my professional career, I had the privilege of working on impactful projects that reached more than 90 million users. This experience gave me the development of the ability to work under pressure and excel in project management. Collaboration with diverse and multidisciplinary teams in demanding environments also enriched my professional experience. \n I am always excited to embrace new opportunities and face exciting challenges. I believe in the importance of continuous learning and keeping up with the latest technological trends. That’s why I’m always looking to update my skills to deliver the best work possible. \n Feel free to contact me in Portuguese or English. I am available for collaborations, new projects or even for a chat about our common passions. \n Let’s create something amazing together!",
+    "button": "Download my curriculum"
+  },
+  "Contact": {
+    "title": "Send me a email"
+  }
+}

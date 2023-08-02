@@ -1,13 +1,13 @@
 import React from "react";
 import { ArrowDown } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({ title, paragraph }: any) {
   return (
     <div className="relative w-full h-screen flex justify-center items-center bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-200 via-emerald-200 to-yellow-200">
       <div className="w-min uppercase z-10">
         <h2 className="flex font-black text-zinc-700 md:text-xl">
-          Oi <span className="animate-waving-hand">👋🏽</span>
-          eu sou o felipe
+          Hi <span className="animate-waving-hand">👋🏽</span>
+          {title}
         </h2>
         <h1 className="font-black leading-none md:text-9xl text-5xl">
           react
@@ -16,9 +16,7 @@ export default function Hero() {
         </h1>
         <div className="flex md:justify-end">
           <p className="md:w-2/3 text-right font-extrabold text-zinc-700 text-sm">
-            Criador de Experiências Digitais Vibrantes. 90+ milhões de usuários
-            impactados por projetos que transcendem limites. Pronto para superar
-            desafios e criar soluções inovadoras?
+            {paragraph}
           </p>
         </div>
       </div>

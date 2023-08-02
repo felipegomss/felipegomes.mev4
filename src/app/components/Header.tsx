@@ -4,14 +4,11 @@ import React from "react";
 import { Rocket, Github, Instagram, Linkedin, MoveRight } from "lucide-react";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header({ title }: any) {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // first prevent the default behavior
     e.preventDefault();
-    // get the href and remove everything before the hash (#)
     const href = e.currentTarget.href;
     const targetId = href.replace(/.*\#/, "");
-    // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
     elem?.scrollIntoView({
       behavior: "smooth",
@@ -56,7 +53,7 @@ export default function Header() {
             onClick={handleScroll}
             className="flex gap-2 items-center group font-semibold hover:text-emerald-200 duration-1000"
           >
-            Sobre & Projetos
+            {title}
             <span className="group-hover:animate-bounce-right p-4">
               <MoveRight />
             </span>
