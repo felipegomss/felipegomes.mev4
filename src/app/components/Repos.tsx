@@ -84,9 +84,7 @@ export default function Repos() {
           {loading ? (
             <Loader size={32} className="ease-out animate-spin" />
           ) : (
-            <h2 className="text-xl font-extrabold md:text-2xl">
-              Carregar Mais
-            </h2>
+            <h2 className="text-xl font-extrabold md:text-2xl">Mostrar mais</h2>
           )}
         </button>
       </div>
