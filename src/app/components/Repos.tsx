@@ -1,21 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Tag from "./Tag";
 import { Loader } from "lucide-react";
+import RepoCard from "./RepoCard";
 
 interface Repository {
   id: number;
   name: string;
   html_url: string;
   language: string;
+  stargazers_count: number;
 }
 
 export default function Repos() {
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
+  const [displayedRepoIds, setDisplayedRepoIds] = useState<Set<number>>(
+    new Set()
+  );
 
   useEffect(() => {
     const loadMoreRepositories = async () => {
@@ -25,13 +30,23 @@ export default function Repos() {
         const response = await axios.get<Repository[]>(
           `https://api.github.com/users/felipegomss/repos?page=${page}&per_page=12&sort=updated`
         );
-        const newRepositories = response.data;
+        const newRepositories = response.data.filter(
+          (repo) => !displayedRepoIds.has(repo.id)
+        );
+
         setRepositories((prevRepositories) => [
           ...prevRepositories,
           ...newRepositories,
         ]);
 
         setLoading(false);
+
+        const newRepoIds = newRepositories.map(
+          (repo: { id: number }) => repo.id
+        );
+        setDisplayedRepoIds(
+          (prevIds) => new Set([...Array.from(prevIds), ...newRepoIds])
+        );
       } catch (error) {
         console.error("Erro ao carregar os repositórios:", error);
         setLoading(false);
@@ -46,33 +61,30 @@ export default function Repos() {
   };
 
   return (
-    <div className="max-w-7xl m-auto p-8 md:px-0">
-      <h1 className="text-5xl font-extrabold my-8">Code Expedition</h1>
-      <ul className="grid md:grid-cols-4 gap-8">
+    <div className="p-8 m-auto max-w-7xl md:px-0">
+      <h1 className="my-8 text-5xl font-extrabold">Code Expedition</h1>
+      <ul className="grid gap-8 md:grid-cols-4">
         {repositories.map((repo) => (
           <li key={repo.id}>
-            <a
-              href={repo.html_url}
-              className="grid gap-2 h-24 border p-4 hover:scale-105 duration-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>{repo.name}</strong>
-              {repo.language ? <Tag>{repo.language}</Tag> : ""}
-            </a>
+            <RepoCard
+              language={repo.language}
+              name={repo.name}
+              stars={repo.stargazers_count}
+              url={repo.html_url}
+            />
           </li>
         ))}
       </ul>
       <div className="m-auto my-10 md:w-1/3">
         <button
-          className="group relative flex gap-4 justify-center items-center py-4 px-8 border-8 border-black my-10 rounded-2xl shadow-neobrutalism cursor-pointer w-full"
+          className="relative flex items-center justify-center w-full gap-4 px-8 py-4 my-10 border-8 border-black cursor-pointer group rounded-2xl shadow-neobrutalism"
           onClick={handleLoadMore}
           disabled={loading}
         >
           {loading ? (
-            <Loader size={32} className="animate-spin ease-out" />
+            <Loader size={32} className="ease-out animate-spin" />
           ) : (
-            <h2 className="md:text-2xl text-xl font-extrabold">
+            <h2 className="text-xl font-extrabold md:text-2xl">
               Carregar Mais
             </h2>
           )}

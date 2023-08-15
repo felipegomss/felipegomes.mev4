@@ -31,13 +31,12 @@ export default function Articles() {
     }
 
     fetchArticles();
-    console.log(articles);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="max-w-7xl m-auto p-8 md:px-0">
-      <h1 className="text-5xl font-extrabold my-8">Dev Insights</h1>
+    <div className="p-8 m-auto max-w-7xl md:px-0">
+      <h1 className="my-8 text-5xl font-extrabold">Dev Insights</h1>
       <ul className="grid gap-8">
         {articles.map((article, index) => {
           const extractFirstParagraph = (content: string) => {
@@ -88,13 +87,13 @@ export default function Articles() {
 
           const formattedDate = formatDate(article.pubDate);
           return (
-            <li className="border-b py-2" key={index}>
-              <p className="text-zinc-600 text-sm my-2">{formattedDate}</p>
+            <li className="py-2 border-b" key={index}>
+              <p className="my-2 text-sm text-zinc-600">{formattedDate}</p>
               <a href={article.link} target="_blank">
                 <h1 className="text-xl font-black">{article.title}</h1>
                 <p dangerouslySetInnerHTML={createMarkup()} />
               </a>
-              <div className="my-4 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 my-4">
                 {article.categories.length > 0
                   ? article.categories.map((category, index) => {
                       return (

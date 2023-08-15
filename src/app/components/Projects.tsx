@@ -4,9 +4,9 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <div className="max-w-7xl m-auto p-8 md:px-0">
-      <h1 className="text-5xl font-extrabold my-8">Code Lab</h1>
-      <ul className="grid md:grid-cols-3 gap-8">
+    <div className="p-8 m-auto max-w-7xl md:px-0">
+      <h1 className="my-8 text-5xl font-extrabold">Code Lab</h1>
+      <ul className="grid gap-8 md:grid-cols-3">
         <ProjectCard
           name="Jacoseg"
           type="Real Client"
@@ -38,7 +38,7 @@ export default function Projects() {
           url="https://spotify-clone-seven-orpin.vercel.app/"
         />
         <ProjectCard
-          name="Where in the World?"
+          name="WITW?"
           type="Real Project"
           img="witw"
           url="http://countries.felipegomes.me/"

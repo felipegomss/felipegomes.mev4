@@ -7,7 +7,7 @@ interface TagProps {
 export default function Tag({ children }: TagProps) {
   return (
     <div className="flex items-center place-content-end">
-      <span className="rounded-xl bg-zinc-300 text-zinc-950 p-1 px-2 text-xs">
+      <span className="p-1 px-2 text-xs rounded-xl bg-zinc-300 text-zinc-950">
         {children}
       </span>
     </div>

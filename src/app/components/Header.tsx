@@ -16,19 +16,19 @@ export default function Header({ title }: any) {
   };
 
   return (
-    <div className="fixed w-full z-50 border-b-4 border-black bg-white bg-opacity-20 backdrop-blur-lg">
-      <nav className="flex justify-between max-w-7xl m-auto items-center py-4">
-        <a href="/" className="group md:flex hidden">
+    <div className="fixed z-50 w-full bg-white border-b-4 border-black bg-opacity-20 backdrop-blur-lg">
+      <nav className="flex items-center justify-between py-4 m-auto max-w-7xl">
+        <a href="/" className="hidden group md:flex">
           <Rocket className="group-hover:animate-rocket-launch group-hover:fill-emerald-200 group-hover:stroke-emerald-200" />
         </a>
-        <div className="flex md:gap-20 gap-6">
+        <div className="flex gap-6 md:gap-20">
           <div className="flex gap-6">
             <a
               href="https://github.com/felipegomss"
               className="relative p-4 group"
               target="_blank"
             >
-              <div className="bg-emerald-200/40 absolute group-hover:w-full group-hover:h-full w-0 h-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full duration-700" />
+              <div className="absolute w-0 h-0 duration-700 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-200/40 group-hover:w-full group-hover:h-full top-1/2 left-1/2" />
               <Github />
             </a>
             <a
@@ -36,7 +36,7 @@ export default function Header({ title }: any) {
               className="relative p-4 group"
               target="_blank"
             >
-              <div className="bg-emerald-200/40 absolute group-hover:w-full group-hover:h-full w-0 h-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full duration-700" />
+              <div className="absolute w-0 h-0 duration-700 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-200/40 group-hover:w-full group-hover:h-full top-1/2 left-1/2" />
               <Linkedin />
             </a>
             <a
@@ -44,17 +44,17 @@ export default function Header({ title }: any) {
               className="relative p-4 group"
               target="_blank"
             >
-              <div className="bg-emerald-200/40 absolute group-hover:w-full group-hover:h-full w-0 h-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full duration-700" />
+              <div className="absolute w-0 h-0 duration-700 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-200/40 group-hover:w-full group-hover:h-full top-1/2 left-1/2" />
               <Instagram />
             </a>
           </div>
           <Link
             href={"#about"}
             onClick={handleScroll}
-            className="flex gap-2 items-center group font-semibold hover:text-emerald-200 duration-1000"
+            className="flex items-center gap-2 font-semibold duration-1000 group hover:text-emerald-200"
           >
             {title}
-            <span className="group-hover:animate-bounce-right p-4">
+            <span className="p-4 group-hover:animate-bounce-right">
               <MoveRight />
             </span>
           </Link>

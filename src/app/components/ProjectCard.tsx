@@ -15,7 +15,7 @@ export default function ProjectCard({ url, img, type, name }: Project) {
   return (
     <li>
       <a href={url} target="_blank">
-        <div className="hover:scale-105 duration-500 aspect-video rounded-xl border-2 cursor-pointer bg-zinc-950">
+        <div className="duration-500 border-2 cursor-pointer hover:rounded-none aspect-video rounded-2xl bg-zinc-950">
           <Image
             src={`/${img}.png`}
             alt={`/${name} webpage`}
@@ -24,7 +24,7 @@ export default function ProjectCard({ url, img, type, name }: Project) {
           />
         </div>
       </a>
-      <div className="grid grid-cols-2 mt-2">
+      <div className="grid items-start grid-cols-2 mt-2">
         <h2 className="text-2xl font-bold ">{name}</h2>
         <Tag>{type}</Tag>
       </div>
