@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        dotted: "url('/dotted.jpg')",
+      },
       boxShadow: {
         neobrutalism: "5px 5px #000",
       },
