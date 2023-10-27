@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 import React from "react";
-import Link from "next-intl/link";
 
 export default function LocaleToggle() {
   const params = useParams();
